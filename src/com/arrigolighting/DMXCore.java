@@ -23,10 +23,10 @@ import jd2xx.JD2XX;
 
 public class DMXCore{
 	
-JD2XX dmx = new JD2XX();
-boolean dmxBool = true;
+static JD2XX dmx = new JD2XX();
+static boolean dmxBool = true;
 
-	public void set(int usbPort) {
+	public static void set(int usbPort) {
 		try {
 			//If you keep getting an error, go online and find a JD2XX library file (.so or.dll) that fits your architecture.
 			dmx.open(usbPort); //opens device based on USB input
@@ -43,7 +43,7 @@ boolean dmxBool = true;
 		return;
 	}
 	
-	public void start(byte dmxVar[]) {
+	public static void start(byte dmxVar[]) {
 		dmxBool = true;
 		try{		
 			do{
